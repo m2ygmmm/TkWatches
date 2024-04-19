@@ -19,12 +19,11 @@ app.use(session({
 }));
 
 //DOUBLE CHECK AFTER 
-const corsOptions = {
-    origin: '*',
-    credentials: true, 
-  };
-app.use(cors(corsOptions));
-
+app.use(cors({
+    origin: 'https://tkwatches.onrender.com',
+    credentials: true
+  }));
+  
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
