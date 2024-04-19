@@ -1,13 +1,13 @@
 import logo from '../logo_transparent_bgBlack.png'; 
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export function StickyBanenr(){
     return (
         <div id="marketing-banner" tabindex="-1" class="drop-shadow-lg fixed z-50 flex flex-col md:flex-row justify-between w-[calc(100%-2rem)] p-4 -translate-x-1/2 bg-white border border-gray-100 rounded-lg shadow-sm lg:max-w-7xl left-1/2 top-6">
             <div class="flex flex-col md:items-start items-center mb-3 me-4 md:items-center md:flex-row md:mb-0">
-                <a href="/" class="flex items-center mb-2 border-gray-200 md:pe-4 md:me-4 md:border-e md:mb-0 dark:border-gray-600">
+                <Link to="/" class="flex items-center mb-2 border-gray-200 md:pe-4 md:me-4 md:border-e md:mb-0 dark:border-gray-600">
                     <img src={logo} class="h-12 me-2" alt="Flowbite Logo" />
-                 </a>
+                 </Link>
                  <p class="flex items-center text-sm font-normal text-gray-500 font-Lexend"><span className='font-bold text-green-500'>Free UK delivery</span> &nbsp;On all our store items!</p>
             </div>
             <div class="flex p-4 justify-center flex-shrink-0">

@@ -1,4 +1,5 @@
 import logo from '../logo_transparent_bg.png'; 
+import { Link } from 'react-router-dom';
 
 export function Footer(){
     return (
@@ -12,13 +13,13 @@ export function Footer(){
                         </a>
                         <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0 font-EB_Garamond">
                             <li>
-                                <a href="/" class="hover:underline me-4 md:me-6">Home</a>
+                                <Link to="/" class="hover:underline me-4 md:me-6">Home</Link>
                             </li>
                             <li>
-                                <a href="/contact" class="hover:underline me-4 md:me-6">Contact</a>
+                                <Link tp="/contact" class="hover:underline me-4 md:me-6">Contact</Link>
                             </li>
                             <li>
-                                <a href="/store" class="hover:underline">Store</a>
+                                <Link to="/store" class="hover:underline">Store</Link>
                             </li>
                         </ul>
                     </div>
