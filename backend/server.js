@@ -20,10 +20,10 @@ app.use(session({
 
 //DOUBLE CHECK AFTER 
 app.use(cors({
-    origin: 'https://tkwatches.onrender.com',
+    origin: process.env.FRONTEND_ORIGIN,
     credentials: true
   }));
-  
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
