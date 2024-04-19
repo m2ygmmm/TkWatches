@@ -2,7 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const cors = require('cors');
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 require('dotenv').config()
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 
@@ -20,7 +20,7 @@ app.use(session({
 
 //DOUBLE CHECK AFTER 
 const corsOptions = {
-    origin: '*', 
+    origin: process.env.FRONTEND_ORIGIN, 
     credentials: true, 
   };
 app.use(cors(corsOptions));
