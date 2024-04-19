@@ -23,9 +23,9 @@ export function Home(){
                         <a href="#about" class="inline-flex justify-center text-lg items-center py-3 px-5 text-base font-Lexend border border-white text-center text-white rounded-lg bg-blackShade hover:bg-white hover:text-blackShade">
                             About us
                         </a>
-                        <a href="/store" class="py-3 px-5 sm:ms-4 font-Lexend text-lg text-gray-900 bg-white rounded-lg border border-blackShade hover:bg-blackShade hover:text-white">
+                        <Link to="/store" class="py-3 px-5 sm:ms-4 font-Lexend text-lg text-gray-900 bg-white rounded-lg border border-blackShade hover:bg-blackShade hover:text-white">
                             <Link to='/store'>Shop now</Link>
-                        </a>  
+                        </Link>  
                     </div>
                 </div>
             </section>
