@@ -14,7 +14,7 @@ export function Store() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const { data: response } = await axios.get('http://localhost:4000/products');
+                const { data: response } = await axios.get('https://tkwatches-backend.onrender.com/products');
                 setData(response["1"]);
                 setImages(response["2"]);
             } catch (error) {
