@@ -7,7 +7,9 @@ const pool = new Pool({
     host: process.env.POSTGRES_HOST,
     port: process.env.POSTGRES_PORT,
     database: process.env.POSTGRES_DATABASE,
-    ssl: true
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 const query = (text, params, callback) => {
