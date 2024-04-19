@@ -16,7 +16,7 @@ export function Footer(){
                                 <Link to="/" class="hover:underline me-4 md:me-6">Home</Link>
                             </li>
                             <li>
-                                <Link tp="/contact" class="hover:underline me-4 md:me-6">Contact</Link>
+                                <Link to="/contact" class="hover:underline me-4 md:me-6">Contact</Link>
                             </li>
                             <li>
                                 <Link to="/store" class="hover:underline">Store</Link>
