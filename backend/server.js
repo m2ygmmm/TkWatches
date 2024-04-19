@@ -20,6 +20,7 @@ app.use(session({
 
 //DOUBLE CHECK AFTER 
 const corsOptions = {
+    origin: '*',
     credentials: true, 
   };
 app.use(cors(corsOptions));

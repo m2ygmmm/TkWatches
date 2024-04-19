@@ -20,7 +20,9 @@ export function Item() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const { data: response } = await axios.get(`https://tkwatches-backend.onrender.com/products/${id}`, );
+                const { data: response } = await axios.get(`https://tkwatches-backend.onrender.com/products/${id}`, {
+                    withCredentials: true 
+                });
                 setData(response["1"]);
                 setImages(response["2"])
                 setCurrentImage(response["2"][0].image_location)
