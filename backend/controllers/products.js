@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
             res.json(returnObj);
         }
     } catch (err) {
-        res.status(500).send('Internal server error');
+        res.status(500).send(err);
     }
 });
 router.get('/:id', async (req, res) => {
