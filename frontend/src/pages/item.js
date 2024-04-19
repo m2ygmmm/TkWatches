@@ -20,7 +20,7 @@ export function Item() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const { data: response } = await axios.get(`http://localhost:4000/products/${id}`, {
+                const { data: response } = await axios.get(`https://tkwatches-backend.onrender.com/products/${id}`, {
                     withCredentials: true 
                 });
                 setData(response["1"]);

@@ -20,12 +20,12 @@ export function Cart() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/cart', {
+                const response = await axios.get('https://tkwatches-backend.onrender.com/cart', {
                     withCredentials: true
                 });
                 setData(response.data.data);
                 console.log(cartData);
-                const { data: responseItems} = await axios.get('http://localhost:4000/products');
+                const { data: responseItems} = await axios.get('https://tkwatches-backend.onrender.com/products');
                 setCartData(responseItems["1"]);
                 setImages(responseItems["2"]);
             } catch (error) {
@@ -52,7 +52,7 @@ export function Cart() {
                     };
         
                     const response = await axios.post(
-                        'http://localhost:4000/create-checkout-session',
+                        'https://tkwatches-backend.onrender.com/create-checkout-session',
                         requestData,
                         {
                             withCredentials: true 
@@ -73,7 +73,7 @@ export function Cart() {
     const removeItem = (item) => {
         const postDelete = async () => {
             try{
-                const response = await axios.post('http://localhost:4000/cart/removeFromCart',
+                const response = await axios.post('https://tkwatches-backend.onrender.com/cart/removeFromCart',
             item, {
                 withCredentials: true
             }
@@ -118,7 +118,7 @@ const SubtotalPrice = (cartData) => {
 const onChange = (event, index, product_id) => {
     const postData = async () => {
         try {
-            const response = await axios.put(`http://localhost:4000/cart/updateCart?productId=${product_id}&updateQuantity=${event.target.value}`,
+            const response = await axios.put(`https://tkwatches-backend.onrender.com/cart/updateCart?productId=${product_id}&updateQuantity=${event.target.value}`,
              null, {
                 withCredentials: true
             });
