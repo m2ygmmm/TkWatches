@@ -24,7 +24,9 @@ router.get('/', async (req, res) => {
         }
     } catch (err) {
         res.status(500).send(err);
+        console.log(err)
     }
+
 });
 router.get('/:id', async (req, res) => {
     const id = req.params.id
