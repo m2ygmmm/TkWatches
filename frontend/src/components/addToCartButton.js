@@ -17,7 +17,7 @@ export function AddToCartButton(props) {
         const postData = async () => {
             try {
                 const response = await axios.post(`http://localhost:4000/cart?productId=${id}&quantity=${itemQuantity}`, null, {
-                    withCredentials: true // Include credentials in the request for security reasons
+                    withCredentials: true
                 });
                 console.log(response);
                 setCartStatus('Item added!')

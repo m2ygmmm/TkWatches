@@ -11,7 +11,7 @@ export function ReturnProduct(){
         const fetchData = async () => {
             try {
                 const { data: response } = await axios.get(`http://localhost:4000/products/${id}`, {
-                    withCredentials: true //SECURITY CHECK? Include credentials in the request
+                    withCredentials: true
                 });
                 setData(response["1"]);
             } catch (error) {

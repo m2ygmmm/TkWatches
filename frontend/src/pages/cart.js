@@ -55,7 +55,7 @@ export function Cart() {
                         'http://localhost:4000/create-checkout-session',
                         requestData,
                         {
-                            withCredentials: true // Include credentials in the request
+                            withCredentials: true 
                         }
                     );
                     console.log(response.data.url);
@@ -120,7 +120,7 @@ const onChange = (event, index, product_id) => {
         try {
             const response = await axios.put(`http://localhost:4000/cart/updateCart?productId=${product_id}&updateQuantity=${event.target.value}`,
              null, {
-                withCredentials: true // Include credentials in the request for security reasons
+                withCredentials: true
             });
             console.log(response);
         } catch (error) {

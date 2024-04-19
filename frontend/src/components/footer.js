@@ -1,4 +1,4 @@
-import logo from '../logo_transparent_bg.png'; // Import the logo image correctly
+import logo from '../logo_transparent_bg.png'; 
 
 export function Footer(){
     return (

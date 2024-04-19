@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import React, { useState } from 'react';
-import logo from '../logo_transparent_bg.png'; // Import the logo image correctly
+import logo from '../logo_transparent_bg.png'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
