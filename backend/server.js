@@ -18,6 +18,8 @@ app.use(session({
     }
 }));
 
+app.set("trust proxy", 1);
+
 const corsOptions = {
     origin: process.env.FRONTEND_ORIGIN,
     credentials: true, 
