@@ -7,62 +7,68 @@ router.post('/', async (req, res) => {
   const quantity = req.query.quantity;
   const cartUUID = req.sessionID;
   try {
-    const cartItem = await db.query(
-      'SELECT * FROM usercart WHERE product_id = $1 AND session_id = $2',
+    const cartItemQuantity = await db.query(
+      'SELECT quantity FROM usercart WHERE product_id = $1 AND session_id = $2',
       [productId, cartUUID]);
     if (productId) {
-      const result =
-          await db.query('SELECT * FROM products WHERE id = $1', [productId]);
-      const cartUUID = req.sessionID;
-      const existingCartItem = await db.query(
-          'SELECT * FROM usercart WHERE product_id = $1 AND session_id = $2',
-          [productId, cartUUID]);
-      if (existingCartItem.rows.length > 0  && cartItem.rows[0].quantity < 5) {
-          await db.query(
-              'UPDATE usercart SET quantity = $1 WHERE product_id = $2 AND session_id = $3',
-              [
-                existingCartItem.rows[0].quantity + parseInt(quantity),
-                productId, cartUUID
-              ]);
-        
-      } else if (cartItem.rows[0].quantity < 5) {
-          await db.query(
-              'INSERT INTO usercart (product_id, itemname, quantity, session_id, unit_price) VALUES ($1, $2, $3, $4, $5)',
-              [productId, result.rows[0].name, quantity, cartUUID, result.rows[0].price]);
-        
+      const result = await db.query('SELECT * FROM products WHERE id = $1', [productId]);
+      const existingQuantity = cartItemQuantity.rows.length > 0 ? cartItemQuantity.rows[0].quantity : 0;
+      
+      if (existingQuantity > 0 && existingQuantity < 5) {
+        await db.query(
+          'UPDATE usercart SET quantity = $1 WHERE product_id = $2 AND session_id = $3',
+          [
+            existingQuantity + parseInt(quantity),
+            productId,
+            cartUUID
+          ]);
+      } else if (existingQuantity < 5) {
+        await db.query(
+          'INSERT INTO usercart (product_id, itemname, quantity, session_id, unit_price) VALUES ($1, $2, $3, $4, $5)',
+          [
+            productId,
+            result.rows[0].name,
+            quantity,
+            cartUUID,
+            result.rows[0].price
+          ]);
       }
-      res.status(201).json({message: 'Item added successfully'});
+      res.status(201).json({ message: 'Item added successfully' });
     } else {
-      res.status(400).json({message: 'Product ID is required'});
+      res.status(400).json({ message: 'Product ID is required' });
     }
-    } catch (err) {
+  } catch (err) {
     res.status(500).send(err);
-    console.log(err)
+    console.log(err);
   }
 });
+
 
 router.put('/updateCart', async (req, res) => {
   const productId = req.query.productId;
   const updateQuantity = req.query.updateQuantity;
   const cartUUID = req.sessionID;
-  try{
-    const cartItem = await db.query(
-      'SELECT * FROM usercart WHERE product_id = $1 AND session_id = $2',
+  try {
+    const cartItemQuantity = await db.query(
+      'SELECT quantity FROM usercart WHERE product_id = $1 AND session_id = $2',
       [productId, cartUUID]);
-    if(updateQuantity && productId && cartItem.rows[0].quantity < 5){
-       await db.query(
+    if (updateQuantity && productId && cartItemQuantity.rows.length > 0 && cartItemQuantity.rows[0].quantity < 5) {
+      await db.query(
         'UPDATE usercart SET quantity = $1 WHERE product_id = $2 AND session_id = $3',
         [
           parseInt(updateQuantity),
-          productId, cartUUID
+          productId,
+          cartUUID
         ]);
-        res.status(201).json({message: 'Item updated successfully'});
+      res.status(201).json({ message: 'Item updated successfully' });
+    } else {
+      res.status(400).json({ message: 'Update quantity failed' });
     }
-  }catch (error){
+  } catch (error) {
     res.status(500).send('Internal server error');
   }
-  
-})
+});
+
 
 router.get('/clearCart', async (req, res) => {
   try {
