@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
   try {
     const cartItem = await db.query(
       'SELECT * FROM usercart WHERE product_id = $1 AND session_id = $2',
-      [item.product_id, cartUUID]);
+      [product_id, cartUUID]);
     if (productId) {
       const result =
           await db.query('SELECT * FROM products WHERE id = $1', [productId]);
@@ -47,7 +47,7 @@ router.put('/updateCart', async (req, res) => {
   try{
     const cartItem = await db.query(
       'SELECT * FROM usercart WHERE product_id = $1 AND session_id = $2',
-      [item.product_id, cartUUID]);
+      [product_id, cartUUID]);
     if(updateQuantity && productId && cartItem.rows[0].quantity < 5){
        await db.query(
         'UPDATE usercart SET quantity = $1 WHERE product_id = $2 AND session_id = $3',
