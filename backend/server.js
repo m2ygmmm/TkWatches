@@ -8,13 +8,13 @@ const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 
 app.use(session({
     secret: (process.env.EXPRESS_SESSION_SECRET),
-    resave: false,
+    resave: true,
     saveUninitialized: true,
     cookie: {
         secure: false,
         httpOnly: false, 
         maxAge: 72 * 60 * 60 * 1000,
-        sameSite: 'lax'
+        sameSite: 'strict'
     }
 }));
 
