@@ -5,10 +5,11 @@ const db = require('../config/db');
 router.post('/', async (req, res) => {
   const productId = req.query.productId;
   const quantity = req.query.quantity;
+  const cartUUID = req.sessionID;
   try {
     const cartItem = await db.query(
       'SELECT * FROM usercart WHERE product_id = $1 AND session_id = $2',
-      [product_id, cartUUID]);
+      [productId, cartUUID]);
     if (productId) {
       const result =
           await db.query('SELECT * FROM products WHERE id = $1', [productId]);
@@ -47,7 +48,7 @@ router.put('/updateCart', async (req, res) => {
   try{
     const cartItem = await db.query(
       'SELECT * FROM usercart WHERE product_id = $1 AND session_id = $2',
-      [product_id, cartUUID]);
+      [productId, cartUUID]);
     if(updateQuantity && productId && cartItem.rows[0].quantity < 5){
        await db.query(
         'UPDATE usercart SET quantity = $1 WHERE product_id = $2 AND session_id = $3',
