@@ -31,8 +31,7 @@ router.post('/', async (req, res) => {
     } else {
       res.status(400).json({message: 'Product ID is required'});
     }
-    
-  } catch (err) {
+    } catch (err) {
     res.status(500).send(err);
     console.log(err)
   }

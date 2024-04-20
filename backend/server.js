@@ -11,18 +11,16 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     cookie: {
-        secure: true, 
+        secure: true,
         httpOnly: false, 
         maxAge: 72 * 60 * 60 * 1000,
-        sameSite: 'none'
+        sameSite: 'lax'
     }
 }));
 
-//DOUBLE CHECK AFTER 
 const corsOptions = {
     origin: process.env.FRONTEND_ORIGIN,
     credentials: true, 
-    origin: true
   };
   
 app.use(cors(corsOptions));
