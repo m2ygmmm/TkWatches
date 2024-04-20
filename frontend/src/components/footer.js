@@ -5,13 +5,13 @@ export function Footer(){
     return (
         <>
             <footer class="fixed bottom-0 left-0 z-20 w-full bg-gradient-to-t from-blackShade ease-in hover:bg-blackShade transition-all drop-shadow-2xl ">
-                <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+                <div class="w-full max-w-screen-xl mx-auto p-2 md:py-8">
                     <div class="sm:flex sm:items-center sm:justify-between">
                         <a href="/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                            <img src={logo} class="h-12" alt="TK" />
+                            <img src={logo} class="h-8" alt="TK" />
                             <span class="self-center text-2xl font-EB_Garamond whitespace-nowrap text-white">Timeless Kettles</span>
                         </a>
-                        <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0 font-EB_Garamond">
+                        <ul class="flex flex-wrap items-center mb-2 text-sm font-medium text-white sm:mb-0 font-EB_Garamond">
                             <li>
                                 <Link to="/" class="hover:underline me-4 md:me-6">Home</Link>
                             </li>
