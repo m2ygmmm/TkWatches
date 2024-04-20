@@ -6,20 +6,22 @@ const port = process.env.PORT || 4000;
 require('dotenv').config()
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 app.use(session({
     secret: (process.env.EXPRESS_SESSION_SECRET),
     resave: false,
     saveUninitialized: true,
     cookie: {
-        secure: false,
+        secure: isProduction,
         httpOnly: false, 
         maxAge: 72 * 60 * 60 * 1000,
-        sameSite: 'lax'
+        sameSite: 'none'
     }
 }));
 
 const corsOptions = {
-    origin: [process.env.FRONTEND_ORIGIN, 'http://localhost:3000'],
+    origin: process.env.FRONTEND_ORIGIN,
     credentials: true, 
   };
   
