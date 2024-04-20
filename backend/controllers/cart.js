@@ -88,7 +88,7 @@ router.post('/removeFromCart', async (req, res) => {
                 [newQuantity, item.product_id, cartUUID]);
           }
         }
-    res.redirect('/')
+        res.status(200).json({ message: 'Delete successful' });
   } catch (err) {
     res.status(500).send('Internal server error');
   }

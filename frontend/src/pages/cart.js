@@ -40,7 +40,7 @@ export function Cart() {
         fetchData();
     }, [loading]);
 
-    
+     
 
     const checkout = () => {
           if (checkoutButton){  
@@ -82,7 +82,6 @@ export function Cart() {
         setLoading(true)
         console.log(response)
             } catch (error) {
-
             }
         }
         postDelete()
