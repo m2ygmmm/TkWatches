@@ -22,6 +22,7 @@ app.use(session({
 const corsOptions = {
     origin: process.env.FRONTEND_ORIGIN,
     credentials: true, 
+    origin: true
   };
   
 app.use(cors(corsOptions));
