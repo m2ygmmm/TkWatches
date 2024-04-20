@@ -6,23 +6,25 @@ const port = process.env.PORT || 4000;
 require('dotenv').config()
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 
-
 app.use(session({
     secret: (process.env.EXPRESS_SESSION_SECRET),
     resave: false,
     saveUninitialized: true,
     cookie: {
-        secure: false, 
+        secure: true, 
         httpOnly: false, 
-        maxAge: 72 * 60 * 60 * 1000 
+        maxAge: 72 * 60 * 60 * 1000,
+        sameSite: true
     }
 }));
 
 //DOUBLE CHECK AFTER 
-app.use(cors({
+const corsOptions = {
     origin: process.env.FRONTEND_ORIGIN,
-    credentials: true
-  }));
+    credentials: true, 
+  };
+  
+app.use(cors(corsOptions));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

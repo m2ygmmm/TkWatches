@@ -16,7 +16,8 @@ export function AddToCartButton(props) {
         const itemQuantity = 1;
         const postData = async () => {
             try {
-                const response = await axios.post(`https://tkwatches-backend.onrender.com/cart?productId=${id}&quantity=${itemQuantity}`, null, {
+                const response = await axios.post(`https://tkwatches-backend.onrender.com/cart?productId=${id}&quantity=${itemQuantity}`,
+                 null, {
                     withCredentials: true
                 });
                 console.log(response);
