@@ -125,7 +125,7 @@ router.get('/', async (req, res) => {
     let result;
       result = await db.query(
           'SELECT * FROM usercart WHERE session_id = $1', [cartUUID]);
-      res.json({message: 'Items for guest', data: result.rows});
+      res.json({message: 'Items', data: result.rows});
 
   } catch (err) {
     res.status(500).send('Internal server error');
