@@ -11,7 +11,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     cookie: {
-        secure: false,
+        secure: true,
         httpOnly: false, 
         maxAge: 72 * 60 * 60 * 1000,
         sameSite: 'lax'
@@ -19,7 +19,7 @@ app.use(session({
 }));
 
 const corsOptions = {
-    origin: process.env.FRONTEND_ORIGIN,
+    origin: [process.env.FRONTEND_ORIGIN, 'http://localhost:3000'],
     credentials: true, 
   };
   
