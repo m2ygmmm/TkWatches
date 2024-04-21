@@ -4,6 +4,7 @@ import logo from '../logo_transparent_bg.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { Navbar } from "flowbite-react";
 import 'flowbite'
 
@@ -32,6 +33,7 @@ function NavBar() {
                         <NavLink to="/store" className={({ isActive }) => (isActive ? "text-center md:text-2xl underline underline-offset-4 text-3xl font-EB_Garamond block py-1 px-2 text-white hover:text-stone transition-all" : "text-center md:text-2xl no-underline text-3xl font-EB_Garamond block py-1 px-2 text-white hover:text-stone transition-all")}>Store</NavLink>
                     </li>
                     <li className="flex flex-row pt-4 md:pt-0">
+                        <Link target="_blank" to="https://wa.me/message/DDKQQA46IXC4L1"><FontAwesomeIcon className="text-center text-white md:text-2xl text-3xl py-2 px-2 block hover:text-stone transition-all" icon={faWhatsapp}/></Link>
                         <Link target="_blank" to="https://www.instagram.com/timelesskettlesuk/"><FontAwesomeIcon className="text-center text-white md:text-2xl text-3xl py-2 px-2 block hover:text-stone transition-all" icon={faInstagram}/></Link>
                         <NavLink to="/cart"><FontAwesomeIcon className="text-center text-white md:text-2xl text-3xl py-2 px-2 block hover:text-stone transition-all" icon={faShoppingCart}/></NavLink>
                     </li>

@@ -5,6 +5,10 @@ import watchBg4 from '../watch_bg_4.jpg';
 import watchBg5 from '../watch_bg_5.jpg';
 import { Link } from 'react-router-dom';
 import { useRef } from 'react';
+import { Button } from 'flowbite-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export function Home(){
 
@@ -108,7 +112,28 @@ export function Home(){
                     </div>
                 </figcaption>    
             </figure>
+            
         </div>
+        <div className='flex flex-col items-center'>
+        <h1 className="text-4xl font-EB_Garamond font-semibold text-center mt-6">Reach out via:</h1>
+                <div className="flex flex-wrap gap-2 p-4">
+                    <Button.Group outline>
+                        <Button color="gray" href="https://www.instagram.com/timelesskettlesuk/">
+                            Instagram  
+                            <FontAwesomeIcon className="ml-2 mt-1" icon={faInstagram} />
+                        </Button>
+                        <Button color="gray" href="https://wa.me/message/DDKQQA46IXC4L1">
+                            WhatsApp  
+                            <FontAwesomeIcon className="ml-2 mt-1" icon={faWhatsapp} />
+                        </Button>
+                        <Button color="gray">
+                            Mail  
+                            <FontAwesomeIcon className="ml-2 mt-1" icon={faEnvelope} />
+                        </Button>
+                    </Button.Group>
+        </div>
+        </div>
+       
     </div>
 </section>
 </>

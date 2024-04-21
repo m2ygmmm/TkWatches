@@ -1,8 +1,13 @@
+import { Button } from "flowbite-react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
 export function Contact(){
     return (
         <>
-            <form class="max-w-md mx-auto p-8 my-12 ">
-                <h1 className="text-5xl font-EB_Garamond font-semibold drop-shadow-xl my-4">Have a question?</h1>
+            <form class="max-w-md mx-auto p-8 my-12 flex flex-col ">
+                <h1 className="text-5xl font-EB_Garamond font-semibold text-center my-4">Have a question?</h1>
                 <p className="text-xl font-Lexend my-4 "> Please complete the form below, and we will promptly reach out to you:</p>
                 <div class="grid md:grid-cols-2 md:gap-6">
                     <div class="relative z-0 w-full mb-5 group">
@@ -23,7 +28,25 @@ export function Contact(){
                     <label for="large-input" class="font-Lexend text-xl py-2 block mb-2 text-gray-900">Enter your message:</label>
                     <textarea type="message" id="large-input" class="font-Lexend block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blackShade focus:border-blackShade"/>
                 </div>
-                <button type="submit" class="text-white bg-blackShade hover:bg-white hover:text-blackShade font-medium font-Lexend rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+                
+                <button type="submit" class="text-white bg-blackShade drop-shadow-xl hover:bg-white hover:text-blackShade font-medium font-Lexend rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+                <h1 className="text-4xl font-EB_Garamond font-semibold text-center mt-6">Reach out via:</h1>
+                <div className="flex flex-wrap gap-2 p-4">
+                    <Button.Group outline>
+                        <Button color="gray" href="https://www.instagram.com/timelesskettlesuk/">
+                            Instagram  
+                            <FontAwesomeIcon className="ml-2 mt-1" icon={faInstagram} />
+                        </Button>
+                        <Button color="gray" href="https://wa.me/message/DDKQQA46IXC4L1">
+                            WhatsApp  
+                            <FontAwesomeIcon className="ml-2 mt-1" icon={faWhatsapp} />
+                        </Button>
+                        <Button color="gray">
+                            Mail  
+                            <FontAwesomeIcon className="ml-2 mt-1" icon={faEnvelope} />
+                        </Button>
+                    </Button.Group>
+        </div>
             </form>
          </>
     )
