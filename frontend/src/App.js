@@ -5,7 +5,7 @@ import { Store} from './pages/store'
 import { Item } from './pages/item'
 import { NotFound } from "./pages/notFound";
 import { Cart } from "./pages/cart";
-import { Footer } from "./components/footer";
+import { FooterComponent } from "./components/footer";
 import NavBar from "./components/navbar"
 import 'flowbite'
 
@@ -24,7 +24,7 @@ function App() {
       <Route path="/cart" element={<Cart />}/>
       <Route path="*" element={<NotFound/>}/>
    </Routes>
-   <Footer/>
+   <FooterComponent/>
    </>
   );
 }

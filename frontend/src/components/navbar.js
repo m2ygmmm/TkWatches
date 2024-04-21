@@ -15,10 +15,9 @@ function NavBar() {
     };
 
     return (
-        <Navbar fluid className="bg-blackShade p-10"> 
+        <Navbar fluid className="bg-blackShade md:p-10 p-6 drop-shadow-xl"> 
             <Navbar.Brand href="/">
                 <img src={logo} className="mr-3 h-20" alt="TK Logo" />
-                <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span>
             </Navbar.Brand>
             <Navbar.Toggle />
             <Navbar.Collapse>
