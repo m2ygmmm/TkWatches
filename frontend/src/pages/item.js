@@ -134,25 +134,25 @@ export function Item() {
                     </div>
                 </div>
                 <div className="md:col-span-2 md:row-start-4 row-start-3 p-6">
-                    <div id="accordion-open" data-accordion="open">
-                        <h2 id="accordion-open-heading-1">
+                    <div>
+                        <h2 >
                             <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-gray-500 border-t-4 border-gray-200 rounded-t-xl gap-3" data-accordion-target="#accordion-open-body-1" aria-expanded="true" aria-controls="accordion-open-body-1">
                                 <span className="flex items-center"><svg class="w-5 h-5 me-2 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>Delivery Information</span>
                             </button>
                         </h2>
-                        <div id="accordion-open-body-1" aria-labelledby="accordion-open-heading-1">
+                        <div>
                             <div class="p-5 border border-b-0 border-gray-200 ">
                                 <p class="mb-2 text-gray-500 font-Lexend">All items are dispatched by 1PM between monday to friday (Excluding public holidays)</p>
                                 <p class="text-gray-500 font-Lexend">Once your items have been dispatched, anticipate a delivery window of 2-3 days with <a href="https://www.evri.com/send" class="text-blue-600 dark:text-blue-500 hover:underline">Evri</a> standard delivery (Fee included in Final price). We cannot accept responsibility for any loss or damage once the item has been dispatched</p>
                             </div>
                         </div>
-                        <h2 id="accordion-open-heading-2">
+                        <h2 >
                             <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border-t-4 border-gray-200 gap-3" data-accordion-target="#accordion-open-body-2" aria-expanded="false" aria-controls="accordion-open-body-2">
                             <span className="flex items-center"><svg class="w-5 h-5 me-2 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>Items return policy</span>
                               
                             </button>
                         </h2>
-                        <div id="accordion-open-body-2" aria-labelledby="accordion-open-heading-2">
+                        <div >
                             <div class="p-5 border border-b-0 border-gray-200">
                                 <p class="mb-2 text-gray-500 font-Lexend">Not satisfied with your order? All items currently sold on our site are eligible to a full refund after 14-days of purchase.</p>
                                 <p class="text-gray-500 font-Lexend">Please contact us at pinktoaster38@gmail.com to start a return. Any items returned without contacting us will not be accepted</p>
