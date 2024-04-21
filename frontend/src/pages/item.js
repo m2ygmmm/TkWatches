@@ -56,7 +56,7 @@ export function Item() {
     if (loading) {
         return (
             <>
-                <div className='mt-44 mb-44 md:p-0 p-6'>
+                <div className='p-6'>
                     <div className="grid md:grid-cols-2 md:grid-rows-4 grid-cols-1 grid-rows-5 gap-4">
                         <div className="md:row-span-3 row-span-2">
                             <div className="flex justify-center p-8">
@@ -85,7 +85,7 @@ export function Item() {
     } else {
         return (
             <>
-            <div className='mt-44 mb-44 md:p-0 p-6'>
+            <div className='p-6'>
                 <div className="grid md:grid-cols-2 md:grid-rows-3 grid-cols-1 gap-4">
                     <div className="md:row-span-3 row-start-1">
                         <div className="flex justify-center">

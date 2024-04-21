@@ -41,7 +41,7 @@ export function Store() {
 
     if(!loading){
         return (
-            <div className='my-48'>
+            <div className='my-20'>
                 <section className="bg-white" id="about">
                     <div className="py-8 px-1 mx-auto max-w-screen-xl lg:py-1">
                         <div className="bg-gray-100 border border-gray-200 rounded-lg p-8 md:p-12 flex flex-col items-center">
@@ -57,7 +57,8 @@ export function Store() {
                         </div>
                     </div>
                 </section>
-                <div className='grid lg:grid-cols-3 md:grid-cols-2 px-2 gridsm:grid-cols-1 gap-2 place-content-center mx-auto max-w-screen-xl py-4'>
+                <div 
+                className='grid lg:grid-cols-3 md:grid-cols-2 px-2 gridsm:grid-cols-1 gap-2 place-content-center mx-auto max-w-screen-xl py-4'>
                     {data.map((item, index) => (
                             <ProductCard key={index} itemName={item.name} itemData={item} functionToPass={findImages(item.id)}/>
                     ))}
@@ -67,7 +68,7 @@ export function Store() {
     }
     else{
         return(
-            <div className='mt-48'>
+            <div className='my-20'>
               <StatusBannerPlaceholder />
               <CardPlaceholder />
             </div>

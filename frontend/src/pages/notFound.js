@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 export function NotFound(){
     return (
-    <div className="mt-44 mb-44 p-12">
+    <div className="my-24 p-12">
         <h1 className="font-Lexend font-bold text-5xl text-center p-6">Error 404</h1>
         <h1 className="font-Lexend font-bold text-4xl text-center">Uh-Oh! An error has occurred! :(</h1>
         <h1 className="font-Lexend font-bold md:p-2 py-4 text-3xl text-center">The page you are looking for does not exist</h1>

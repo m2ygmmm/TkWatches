@@ -31,7 +31,7 @@ export function Home(){
             </section>
             
 
-<section class="bg-white mb-40" id="about">
+<section class="bg-white" id="about">
     <div class="py-8 px-2 mx-auto max-w-screen-xl lg:py-16">
         <div class="bg-gray-100 border border-gray-200 rounded-lg p-8 md:p-12 mb-8">
             <h1 class="text-blackShade text-3xl md:text-5xl font-extrabold font-EB_Garamond mb-2 drop-shadow-lg text-center hover:text-6xl transition-all">'The TK way'</h1>

@@ -133,7 +133,7 @@ const onChange = (event, index, product_id) => {
 
 if(loading){
     return (
-        <div className='mt-48 md:mb-4 mb-44 md:p-0 p-6'>
+        <div className='p-6 md:my-12'>
             <div className='flex flex-col items-center'>
             <StatusBannerPlaceholder/>
             <DefaultSkeleton/>
@@ -145,7 +145,7 @@ if(loading){
 } else {
     return (
         <>
-            <div className='md:mt-44 mt-28 md:mb-52 mb-40 md:p-0 p-6'>
+            <div className='p-6 md:my-12'>
                 <div className='grid grid-cols-3 gap-4 py-8 px-1 mx-auto max-w-screen-xl lg:py-1'>
                     <div className='md:col-span-2 col-span-3'>
                         <div className='flex flex-row  md:justify-start justify-center'>
@@ -163,7 +163,7 @@ if(loading){
                         <ul>
                         {cartData.map((item, index) => (
                             <li key={index}>
-                                 <div className='flex md:flex-row flex-row'>
+                                 <div className='flex md:flex-row flex-col'>
                                    <div className='p-6 md:border-r-4 border-none mt-4'>
                                      {findImages(item.product_id)}
                                    </div>

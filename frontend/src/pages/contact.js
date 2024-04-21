@@ -1,10 +1,9 @@
 export function Contact(){
     return (
         <>
-            <form class="max-w-md mx-auto p-8 my-44 ">
+            <form class="max-w-md mx-auto p-8 my-12 ">
                 <h1 className="text-5xl font-EB_Garamond font-semibold drop-shadow-xl my-4">Have a question?</h1>
                 <p className="text-xl font-Lexend my-4 "> Please complete the form below, and we will promptly reach out to you:</p>
-                
                 <div class="grid md:grid-cols-2 md:gap-6">
                     <div class="relative z-0 w-full mb-5 group">
                         <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blackShade peer" placeholder=" " required />
