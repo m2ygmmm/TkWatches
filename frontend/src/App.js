@@ -6,6 +6,7 @@ import { Item } from './pages/item'
 import { NotFound } from "./pages/notFound";
 import { Cart } from "./pages/cart";
 import { FooterComponent } from "./components/footer";
+import { CookieMessage } from "./components/cookieMessage";
 import NavBar from "./components/navbar"
 import 'flowbite'
 
@@ -13,6 +14,7 @@ import 'flowbite'
 function App() {
   return (
     <>
+   <CookieMessage/>
    <NavBar />
    <Routes>
       <Route path="/" element={<Home />}/>
@@ -28,5 +30,4 @@ function App() {
    </>
   );
 }
-
 export default App;
