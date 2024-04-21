@@ -95,7 +95,7 @@ const findImages = (id) => {
         if(filteredImages.length > 0){
             console.log(filteredImages)
             return <img 
-            class="md:p-8 p-0 rounded-t-lg object-contain h-56 w-96" 
+            class="md:p-8 p-0 rounded-t-lg object-contain h-40 w-80" 
             src={`${process.env.PUBLIC_URL}/images/${filteredImages[0].image_location}`} 
             alt="product image" 
             />
@@ -163,18 +163,18 @@ if(loading){
                         <ul>
                         {cartData.map((item, index) => (
                             <li key={index}>
-                                 <div className='flex flex-row'>
-                                   <div className='p-6 border-r-4 mt-4'>
+                                 <div className='flex md:flex-row flex-row'>
+                                   <div className='p-6 md:border-r-4 border-none mt-4'>
                                      {findImages(item.product_id)}
                                    </div>
                                    <div className='flex flex-col p-2'>
                                    <Link to={`/store/${item.product_id}`}>
-                                       <h1 className='font-Lexend font-bold text-2xl'>{item.itemname}</h1>
+                                       <h1 className='font-Lexend font-bold text-3xl'>{item.itemname}</h1>
                                        <h1 className='mt-2 font-Lexend text-sm text-gray-600'>{item.product_id}</h1>
                                        <h1 className='mt-2 font-Lexend font-bold text-xl text-gray-600'>£{item.unit_price}</h1>
                                        </Link>
-                                       <div className='flex md:flex-row flex-col items-center md:items-end'>
-                                            <form className="max-w-sm mt-12">
+                                       <div className='flex flex-row justify-evenly md:justify-start'>
+                                            <form class="max-w-sm md:mt-12 mt-4">
                                                 <label htmlFor="quantity" className="block mb-2 text-sm font-medium font-Lexend text-gray-900">Item quantity:</label>
                                                 <select onChange={(event) => onChange(event, index, item.product_id)} id="quantity" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
                                                     {[...Array(5).keys()].map((index) => (
@@ -196,9 +196,9 @@ if(loading){
                         </ul>
 
                     </div>
-                    <div className='md:col-start-3 md:row-start-1 row-start-2 col-span-3 '>
+                    <div className='md:col-start-3 md:row-start-1 row-start-2 col-span-3 border-t-4 md:border-none'>
                         <div className='flex flex-row md:justify-start justify-center ml-4'>
-                            <h1 className='font-Lexend font-bold text-3xl'>Order summary</h1>
+                            <h1 className='font-Lexend font-bold mt-4 text-3xl'>Order summary</h1>
                         </div>
                         <div className="flex flex-row mt-10 justify-center border rounded-lg drop-shadow-md">
                             <h1 className="p-4 font-Lexend font-semibold"><span className='font-bold text-gray-500'>Now accepting</span> &nbsp;all major payment methods!</h1>

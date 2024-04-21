@@ -6,7 +6,6 @@ import { Item } from './pages/item'
 import { NotFound } from "./pages/notFound";
 import { Cart } from "./pages/cart";
 import { Footer } from "./components/footer";
-import { StickyBanenr } from "./components/stickyBanner";
 import NavBar from "./components/navbar"
 import 'flowbite'
 
@@ -25,7 +24,6 @@ function App() {
       <Route path="/cart" element={<Cart />}/>
       <Route path="*" element={<NotFound/>}/>
    </Routes>
-   <StickyBanenr />
    <Footer/>
    </>
   );
